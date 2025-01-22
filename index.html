@@ -20,9 +20,18 @@
     </style>
 </head>
 <body>
-    <video autoplay muted loop>
+    <video autoplay loop id="mi-video" muted>
         <source src="mi-video.mp4" type="video/mp4">
         Tu navegador no soporta la reproducción de videos.
     </video>
+
+    <script>
+        // Hacer que el sonido se active después de un clic en el video
+        const video = document.getElementById('mi-video');
+        video.addEventListener('click', () => {
+            video.muted = false; // Desactiva el mute
+            video.play();        // Reproduce el video si no se está reproduciendo
+        });
+    </script>
 </body>
 </html>
